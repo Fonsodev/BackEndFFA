@@ -60,7 +60,8 @@ async function createRoutine( req, res ) {
     
         res.status( 201 ).json({
             ok: true,
-            data           // ECMAScript data: data ---> data
+            data,
+            msg: "Rutina creada exitosamente"          // ECMAScript data: data ---> data
         });        
     } 
     catch ( error ) {

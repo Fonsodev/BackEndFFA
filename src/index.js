@@ -1,15 +1,17 @@
 const express = require( 'express' );
 const cors = require('cors');
 const app = express();
+const dotenv = require('dotenv');
+dotenv.config( );
 const PORT = process.env.PORT;
 
 
 const dbConection = require( './config/mongo.config' );
-const { createDefaultUsers } = require('./config/register-default');
+// const { createDefaultUsers } = require('./config/register-default');
 
 /** Establecer la conexion a MongoDB usando la configuracion */
 dbConection();
-createDefaultUsers();
+// createDefaultUsers();
 
 /** MIDDLEWARE: */
 app.use( cors() );                      // middleware: permite compartir rescursos a terceros
@@ -31,6 +33,8 @@ app.use( '/api/categories', require( './routes/categories.routes' ) );
 /** Lanzamos el servidor en puerto indicado 
  * http://localhost:3000
 */
-app.listen( PORT, function() {
-    console.log( 'Servidor corriendo en puerto' + PORT );
-});
+// app.listen( PORT, function() {
+//     console.log( 'Servidor corriendo en puerto' + PORT );
+// });
+
+module.exports = app

@@ -47,11 +47,12 @@ async function register( req, res ) {
         res.json({
             ok: true,
             data,
-            UserInfoFound
+            UserInfoFound,
+            msg: 'Usuario registrado'
         });
     } 
     catch ( error ) {
-        console.error( error );
+        // console.error( error );
         res.json({
             ok: false,
             msg: 'Error al registrar usuario'
@@ -102,7 +103,8 @@ async function login( req, res ) {
         res.json({
             ok: true,
             token, 
-            data: jsonUser
+            data: jsonUser,
+            msg:"Se registró correctamente el usuario " 
         });
 
     } 

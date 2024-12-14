@@ -1,6 +1,7 @@
 const { dbGetUser, dbInsertUser, dbUpdateUser, dbDeleteUser, dbGetUserById } = require("../services/user.services");
 const { dbGetUserinfoByUserId } = require("../services/userinfo.service");
 
+
 async function getUser(req,res) {
     try {
         const data = await dbGetUser();
